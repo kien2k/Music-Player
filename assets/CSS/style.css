@@ -1,0 +1,273 @@
+:root {
+    --text-color: #333;
+    --primary-color: #0c038b;
+    --linear-gradient: linear-gradient(to top right, #0b0927, #46627e)
+
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Poppins", sans-serif; 
+}
+
+body {
+    /* background-color: #f5f5f5; */    
+    background-image: var(--linear-gradient);
+}
+
+.player {
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.player .icon-pause {
+    display: none;
+}
+
+.player.playing .icon-pause {
+    display: inline-block;
+}
+
+.player.playing .icon-play {
+    display: none;
+  }
+
+
+.dashboard {
+    padding: 16px 16px 14px;
+    background-color: #74a5c4;
+    width: 100%;
+    max-width: 480px;
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid #ebebeb;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 10%);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+header h4 {
+    color: var(--primary-color);
+    font-size: 12px;
+}
+
+header h2 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.cd {
+    display: flex;
+    margin: auto;
+    width: 200px;
+}
+
+.cd-thumb {
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 50%;
+    background-size: cover;
+    margin: auto;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 18px 0 8px;
+  }
+
+
+.control .btn {
+    color: #373232;
+    padding: 8px;
+    font-size: 18px;
+  }
+.control .btn i {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.control .btn.active {
+    color: var(--primary-color);
+}
+
+.control .btn-toggle-play {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    cursor: pointer;
+  }
+
+.control .btn-toggle-play:hover i{
+    opacity: 0.7;
+}
+
+.control .fa-redo:hover,
+.control .fa-step-backward:hover,
+.control .fa-step-forward:hover,
+.control .fa-random:hover {
+    background-color: #b3bdc3;
+    cursor: pointer;
+}
+
+.timePlay {
+    display: flex;
+    justify-content: space-between;
+    color: #100f0f;
+    margin-top: 2px;
+    
+ }
+
+ .timePlay .current {
+     position: absolute;
+     left: 16px;
+ }
+
+.volume {
+    position: relative;
+    left: 214px;
+    color: #000;
+    cursor: pointer;
+}
+
+.volume-slider {
+    -webkit-appearance: none;
+    width: 100px;
+    height: 6px;
+    position: absolute;
+    left: 33px;
+    bottom: 9px;
+    border-radius: 20px;
+    background-color: #627cf4;
+    overflow: hidden;
+    opacity: 0;
+    display: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 6px;
+    width: 10px;
+    background-color:var(--primary-color) ;
+    box-shadow: -200px 0 1px 200px var(--primary-color);
+}
+
+.volume-slider.active {
+    opacity: 1;
+    display: block;
+    cursor: pointer;
+}
+
+.fa-volume-high:hover {
+    color: #373232;
+}
+
+.progress {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 6px;
+    /* background: #d3d3d3; */
+    outline: none;
+    opacity: 0.7;
+    /* -webkit-transition: 0.2s;
+    transition: opacity 0.2s; */
+    background-color: #d3d3d3;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 10px;
+    background-color: #08506f;
+    box-shadow: -300px 0 1px 300px #08506f;
+    cursor: pointer;
+}
+
+
+
+.playlist {
+    margin-top: 428px;
+    padding: 12px;
+  }
+
+.song {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    background-color: #74a5c4;
+    padding: 8px 16px;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.song.active {
+    background-color: var(--primary-color);
+}
+
+.song:hover {
+    opacity: 0.8;
+}
+
+.song:active {
+    opacity: 0.7;
+}
+
+.song.active .option,
+.song.active .author,
+.song.active .title {
+  color: #fff;
+}
+
+.song .thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: 0 8px;
+}
+
+.song .body {
+    flex: 1;
+    padding: 0 16px;
+  }
+
+.song .title {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.song .author {
+    font-size: 12px;
+    color: #382c2c;
+  }
+  
+.song .option {
+    padding: 16px 8px;
+    color: #382c2c;
+    font-size: 18px;
+}
+
+
+
+
+
+
+
